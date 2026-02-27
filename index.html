@@ -16,52 +16,53 @@ box-sizing:border-box;
 
 body{
 font-family:'Montserrat', sans-serif;
-background: linear-gradient(180deg, #fff 0%, #fdeff4 50%, #fff 100%);
+background: linear-gradient(180deg, #fff 0%, #fdf2f6 100%);
 color:#5e4b4b;
 text-align:center;
+position:relative;
 overflow-x:hidden;
 }
 
-/* FLORES DE FONDO */
-body::before{
-content:"🌸 🌷 🌸";
+/* FLORES DECORATIVAS */
+.flower-top-left{
 position:fixed;
-top:10%;
-left:5%;
-font-size:40px;
-opacity:0.1;
+top:0;
+left:0;
+width:250px;
+opacity:0.25;
+pointer-events:none;
 }
 
-body::after{
-content:"🌷 🌸 🌷";
+.flower-bottom-right{
 position:fixed;
-bottom:15%;
-right:5%;
-font-size:40px;
-opacity:0.1;
+bottom:0;
+right:0;
+width:250px;
+opacity:0.25;
+pointer-events:none;
 }
 
-/* MARIPOSAS */
-.butterfly{
+/* MARIPOSAS DECORATIVAS */
+.butterfly-one{
 position:fixed;
-font-size:24px;
-animation: float 12s linear infinite;
-opacity:0.6;
+top:25%;
+right:8%;
+width:90px;
+opacity:0.35;
+pointer-events:none;
 }
 
-.b1{ top:20%; left:10%; animation-duration:18s; }
-.b2{ top:60%; left:80%; animation-duration:22s; }
-.b3{ top:75%; left:30%; animation-duration:20s; }
-
-@keyframes float{
-0%{ transform:translateY(0) translateX(0); }
-50%{ transform:translateY(-40px) translateX(30px); }
-100%{ transform:translateY(0) translateX(0); }
+.butterfly-two{
+position:fixed;
+bottom:20%;
+left:10%;
+width:80px;
+opacity:0.35;
+pointer-events:none;
 }
 
 header{
 padding:120px 20px 60px 20px;
-background: radial-gradient(circle at top, rgba(255,182,193,0.2), transparent 70%);
 }
 
 h1{
@@ -79,7 +80,6 @@ margin:0 auto;
 line-height:1.6;
 }
 
-/* CUENTA REGRESIVA */
 .countdown{
 margin-top:30px;
 font-size:1.1rem;
@@ -101,9 +101,9 @@ margin-bottom:20px;
 }
 
 .soft-divider{
-width:50px;
-height:2px;
-background:linear-gradient(to right, transparent, #e7b9c6, transparent);
+width:60px;
+height:1px;
+background:#e7b9c6;
 margin:45px auto;
 }
 
@@ -127,7 +127,7 @@ background:#f7dce3;
 .map-container{
 margin:25px auto 0 auto;
 width:90%;
-max-width:450px;
+max-width:420px;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 8px 20px rgba(0,0,0,0.05);
@@ -143,9 +143,11 @@ color:#9c8a8a;
 
 <body>
 
-<div class="butterfly b1">🦋</div>
-<div class="butterfly b2">🦋</div>
-<div class="butterfly b3">🦋</div>
+<!-- IMÁGENES DECORATIVAS -->
+<img src="https://i.imgur.com/Z7AzH2c.png" class="flower-top-left">
+<img src="https://i.imgur.com/Z7AzH2c.png" class="flower-bottom-right">
+<img src="https://i.imgur.com/3QKQZ8H.png" class="butterfly-one">
+<img src="https://i.imgur.com/3QKQZ8H.png" class="butterfly-two">
 
 <header>
 <h1>Camila y Walter</h1>
@@ -167,9 +169,8 @@ color:#9c8a8a;
 <iframe 
 src="PEGA_AQUI_TU_LINK_EMBED_DE_GOOGLE_MAPS"
 width="100%" 
-height="220" 
-style="border:0;" 
-allowfullscreen="" 
+height="220"
+style="border:0;"
 loading="lazy">
 </iframe>
 </div>
@@ -213,8 +214,7 @@ loading="lazy">
 <script>
 const weddingDate = new Date("October 16, 2026 20:00:00").getTime();
 
-const countdownFunction = setInterval(function() {
-
+setInterval(function() {
 const now = new Date().getTime();
 const distance = weddingDate - now;
 
@@ -224,12 +224,6 @@ const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
 document.getElementById("countdown").innerHTML =
 days + " días • " + hours + " hs • " + minutes + " min";
-
-if (distance < 0) {
-clearInterval(countdownFunction);
-document.getElementById("countdown").innerHTML = "¡Es hoy!";
-}
-
 }, 1000);
 </script>
 
