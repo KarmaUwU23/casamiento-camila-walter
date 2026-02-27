@@ -19,17 +19,54 @@ font-family:'Montserrat', sans-serif;
 background: linear-gradient(180deg, #fff 0%, #fdeff4 50%, #fff 100%);
 color:#5e4b4b;
 text-align:center;
+overflow-x:hidden;
+}
+
+/* FLORES DE FONDO */
+body::before{
+content:"🌸 🌷 🌸";
+position:fixed;
+top:10%;
+left:5%;
+font-size:40px;
+opacity:0.1;
+}
+
+body::after{
+content:"🌷 🌸 🌷";
+position:fixed;
+bottom:15%;
+right:5%;
+font-size:40px;
+opacity:0.1;
+}
+
+/* MARIPOSAS */
+.butterfly{
+position:fixed;
+font-size:24px;
+animation: float 12s linear infinite;
+opacity:0.6;
+}
+
+.b1{ top:20%; left:10%; animation-duration:18s; }
+.b2{ top:60%; left:80%; animation-duration:22s; }
+.b3{ top:75%; left:30%; animation-duration:20s; }
+
+@keyframes float{
+0%{ transform:translateY(0) translateX(0); }
+50%{ transform:translateY(-40px) translateX(30px); }
+100%{ transform:translateY(0) translateX(0); }
 }
 
 header{
-padding:120px 20px 70px 20px;
+padding:120px 20px 60px 20px;
 background: radial-gradient(circle at top, rgba(255,182,193,0.2), transparent 70%);
 }
 
 h1{
 font-family:'Great Vibes', cursive;
 font-size:4.5rem;
-font-weight:400;
 color:#c48a9a;
 margin-bottom:15px;
 }
@@ -40,6 +77,14 @@ font-weight:300;
 max-width:600px;
 margin:0 auto;
 line-height:1.6;
+}
+
+/* CUENTA REGRESIVA */
+.countdown{
+margin-top:30px;
+font-size:1.1rem;
+letter-spacing:2px;
+color:#c48a9a;
 }
 
 .section{
@@ -53,12 +98,6 @@ font-family:'Great Vibes', cursive;
 font-size:2.3rem;
 color:#c48a9a;
 margin-bottom:20px;
-}
-
-.section p{
-font-size:1.1rem;
-margin-bottom:10px;
-font-weight:300;
 }
 
 .soft-divider{
@@ -104,10 +143,16 @@ color:#9c8a8a;
 
 <body>
 
+<div class="butterfly b1">🦋</div>
+<div class="butterfly b2">🦋</div>
+<div class="butterfly b3">🦋</div>
+
 <header>
 <h1>Camila y Walter</h1>
 <p>Con alegría en el corazón queremos invitarlos a celebrar con nosotros este día tan especial.</p>
 <p><strong>16 de Octubre</strong></p>
+
+<div class="countdown" id="countdown"></div>
 </header>
 
 <div class="soft-divider"></div>
@@ -128,8 +173,6 @@ allowfullscreen=""
 loading="lazy">
 </iframe>
 </div>
-
-<a href="https://www.google.com/maps" target="_blank" class="button">VER EN GOOGLE MAPS</a>
 </section>
 
 <div class="soft-divider"></div>
@@ -142,8 +185,17 @@ loading="lazy">
 <div class="soft-divider"></div>
 
 <section class="section">
+<h2>Confirmar Asistencia</h2>
+<p>Confirmar antes del <strong>20 de Septiembre</strong>.</p>
+<p>Camila: +54 9 380 XXXX XXXX</p>
+<p>Walter: +54 9 380 XXXX XXXX</p>
+<a href="https://wa.me/549380XXXXXXXX" target="_blank" class="button">CONFIRMAR</a>
+</section>
+
+<div class="soft-divider"></div>
+
+<section class="section">
 <h2>Lista de Regalos</h2>
-<p>Si desean hacernos un regalo, pueden visitar nuestra wishlist:</p>
 <a href="PEGA_AQUI_TU_LINK_WISHLIST" target="_blank" class="button">VER WISHLIST</a>
 </section>
 
@@ -151,23 +203,35 @@ loading="lazy">
 
 <section class="section">
 <h2>Subí tus Fotos</h2>
-<p>Después de la fiesta, podrán compartir sus fotos y recuerdos aquí:</p>
 <a href="PEGA_AQUI_TU_LINK_DRIVE" target="_blank" class="button">SUBIR FOTOS</a>
-</section>
-
-<div class="soft-divider"></div>
-
-<section class="section">
-<h2>Confirmar Asistencia</h2>
-<p>Por favor confirmar antes del <strong>20 de Septiembre</strong>.</p>
-<p>Camila: +54 9 380 XXXX XXXX</p>
-<p>Walter: +54 9 380 XXXX XXXX</p>
-<a href="https://wa.me/549380XXXXXXXX" target="_blank" class="button">CONFIRMAR</a>
 </section>
 
 <footer>
 <p>Con amor, Camila y Walter</p>
 </footer>
+
+<script>
+const weddingDate = new Date("October 16, 2026 20:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("countdown").innerHTML =
+days + " días • " + hours + " hs • " + minutes + " min";
+
+if (distance < 0) {
+clearInterval(countdownFunction);
+document.getElementById("countdown").innerHTML = "¡Es hoy!";
+}
+
+}, 1000);
+</script>
 
 </body>
 </html>
