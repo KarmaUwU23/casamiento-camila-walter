@@ -3,144 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nuestra Boda</title>
+<title>Camila y Walter</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-margin:0;
 font-family:'Montserrat', sans-serif;
-background-image: url("fondo-floral.jpg.avif");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-background-repeat: no-repeat;
+background-image:url("fondo-floral.jpg.avif");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
+background-color:#fdf2f6;
 color:#5e4b4b;
 text-align:center;
-position:relative;
 }
 
-/* Capa blanca elegante para suavizar el fondo */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(255,255,255,0.80);
-z-index:-1;
+/* CAPA SUAVE PARA MEJORAR LEGIBILIDAD */
+.overlay{
+background:rgba(255,255,255,0.75);
+min-height:100vh;
+padding-bottom:60px;
 }
 
-.container{
-padding:60px 20px;
-max-width:800px;
-margin:auto;
+header{
+padding:120px 20px 60px 20px;
 }
 
 h1{
-font-weight:300;
-font-size:42px;
-letter-spacing:2px;
-margin-bottom:10px;
+font-family:'Great Vibes', cursive;
+font-size:4.5rem;
+color:#c48a9a;
+margin-bottom:15px;
 }
 
-.mensaje-inicial{
-font-size:18px;
-margin-bottom:30px;
+header p{
+font-size:1.2rem;
+font-weight:300;
+max-width:600px;
+margin:0 auto;
+line-height:1.6;
 }
 
 .countdown{
-font-size:22px;
-font-weight:400;
-margin-bottom:50px;
+margin-top:30px;
+font-size:1.1rem;
+letter-spacing:2px;
+color:#c48a9a;
 }
 
-.seccion{
-margin:40px 0;
+.section{
+padding:80px 20px;
+max-width:700px;
+margin:auto;
 }
 
-.valor{
-font-size:20px;
+.section h2{
+font-family:'Great Vibes', cursive;
+font-size:2.3rem;
+color:#c48a9a;
 margin-bottom:20px;
 }
 
-.boton{
-display:inline-block;
-padding:12px 30px;
-border:1px solid #c9a6b3;
-text-decoration:none;
-color:#5e4b4b;
-border-radius:30px;
-transition:all 0.3s ease;
+.soft-divider{
+width:60px;
+height:1px;
+background:#e7b9c6;
+margin:45px auto;
 }
 
-.boton:hover{
-background:#e8cfd8;
+.button{
+display:inline-block;
+margin-top:20px;
+padding:10px 26px;
+background:transparent;
+color:#c48a9a;
+border:1px solid #e7b9c6;
+text-decoration:none;
+font-size:0.85rem;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+.button:hover{
+background:#f7dce3;
+}
+
+.map-container{
+margin:25px auto 0 auto;
+width:90%;
+max-width:420px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
 }
 
 footer{
-margin-top:60px;
-font-size:14px;
-opacity:0.8;
+padding:60px 20px;
+font-size:0.9rem;
+color:#9c8a8a;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="overlay">
 
-<h1>Nos Casamos</h1>
-
-<div class="mensaje-inicial">
-Con mucha alegría queremos invitarte a compartir este momento tan especial en nuestras vidas.
-</div>
-
-<!-- Cuenta regresiva debajo del mensaje -->
+<header>
+<h1>Camila y Walter</h1>
+<p>Con alegría en el corazón queremos invitarlos a celebrar con nosotros este día tan especial.</p>
+<p><strong>16 de Octubre</strong></p>
 <div class="countdown" id="countdown"></div>
+</header>
 
-<div class="seccion">
-<h2>Detalles</h2>
-<p>Fecha: 15 de Diciembre de 2026</p>
-<p>Lugar: Salón Los Jardines</p>
-</div>
+<div class="soft-divider"></div>
 
-<div class="seccion">
-<h2>Regalo</h2>
-<div class="valor">
-Valor de la tarjeta: $50.000
-</div>
+<section class="section">
+<h2>Celebración</h2>
+<p>20:00 hs</p>
+<p><strong>Salón Los Álamos</strong></p>
+<p>Ruta 38 km 5, La Rioja</p>
 
-<!-- Confirmar asistencia debajo del valor -->
-<a href="#" class="boton">Confirmar asistencia</a>
+<div class="map-container">
+<iframe 
+src="PEGA_AQUI_TU_LINK_EMBED_DE_GOOGLE_MAPS"
+width="100%" 
+height="220"
+style="border:0;"
+loading="lazy">
+</iframe>
 </div>
+</section>
+
+<div class="soft-divider"></div>
+
+<section class="section">
+<h2>Valor de la Tarjeta</h2>
+<p>El valor es de <strong>$35.000 por cubierto</strong>.</p>
+</section>
+
+<div class="soft-divider"></div>
+
+<section class="section">
+<h2>Confirmar Asistencia</h2>
+<p>Confirmar antes del <strong>20 de Septiembre</strong>.</p>
+<p>Camila: +54 9 380 XXXX XXXX</p>
+<p>Walter: +54 9 380 XXXX XXXX</p>
+<a href="https://wa.me/549380XXXXXXXX" target="_blank" class="button">CONFIRMAR</a>
+</section>
+
+<div class="soft-divider"></div>
+
+<section class="section">
+<h2>Lista de Regalos</h2>
+<a href="PEGA_AQUI_TU_LINK_WISHLIST" target="_blank" class="button">VER WISHLIST</a>
+</section>
+
+<div class="soft-divider"></div>
+
+<section class="section">
+<h2>Subí tus Fotos</h2>
+<a href="PEGA_AQUI_TU_LINK_DRIVE" target="_blank" class="button">SUBIR FOTOS</a>
+</section>
 
 <footer>
-Esperamos contar con tu presencia 🤍
+<p>Con amor, Camila y Walter</p>
 </footer>
 
 </div>
 
 <script>
-// Fecha del evento (año, mes-1, día)
-const fechaBoda = new Date(2026, 11, 15).getTime();
+const weddingDate = new Date("October 16, 2026 20:00:00").getTime();
 
-const contador = document.getElementById("countdown");
+setInterval(function() {
+const now = new Date().getTime();
+const distance = weddingDate - now;
 
-setInterval(function(){
-const ahora = new Date().getTime();
-const distancia = fechaBoda - ahora;
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));;
 
-const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-contador.innerHTML = dias + " días • " + horas + " horas • " + minutos + " min • " + segundos + " seg";
+document.getElementById("countdown").innerHTML =
+days + " días • " + hours + " hs • " + minutes + " min";
 }, 1000);
 </script>
 
