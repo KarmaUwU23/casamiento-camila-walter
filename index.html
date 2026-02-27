@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camila & Walter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body {
+margin:0;
+font-family:'Playfair Display', serif;
+background: linear-gradient(135deg, #ffffff, #fdeff6);
+color:#6d4c5b;
+text-align:center;
+}
+
+header {
+padding:100px 20px;
+background:linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+url('https://images.unsplash.com/photo-1529634899551-1f45d3e9eaa6');
+background-size:cover;
+background-position:center;
+}
+
+h1 {
+font-family:'Great Vibes', cursive;
+font-size:4rem;
+color:#c08a9a;
+margin:0;
+}
+
+h2 {
+font-weight:500;
+margin-top:10px;
+}
+
+.section {
+padding:60px 20px;
+}
+
+.button {
+display:inline-block;
+margin:10px;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+background:#c08a9a;
+color:white;
+transition:0.3s;
+}
+
+.button:hover {
+background:#a36b7c;
+}
+
+.countdown {
+font-size:1.5rem;
+margin-top:20px;
+color:#b8860b;
+}
+
+footer {
+padding:30px;
+font-size:0.9rem;
+color:#999;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Camila & Walter</h1>
+<h2>16 de octubre de 2026 · 22:00 hs</h2>
+<p>Nos encantaría que nos acompañes en el comienzo de nuestra historia eterna.</p>
+<div class="countdown" id="countdown"></div>
+</header>
+
+<div class="section">
+<h2>Detalles del Evento</h2>
+<p><strong>Lugar:</strong> Ignacio Bar - Eventos</p>
+<p><strong>Ubicación:</strong> La Rioja, Capital, Argentina</p>
+<p><strong>Código de vestimenta:</strong> Formal</p>
+
+<a class="button" href="https://maps.google.com" target="_blank">Ver ubicación</a>
+</div>
+
+<div class="section">
+<h2>Confirmación</h2>
+<p>Confirmar antes de septiembre</p>
+
+<a class="button" href="https://wa.me/549XXXXXXXXX" target="_blank">WhatsApp Camila</a>
+<a class="button" href="https://wa.me/549XXXXXXXXX" target="_blank">WhatsApp Walter</a>
+</div>
+
+<div class="section">
+<h2>Regalos</h2>
+<a class="button" href="LINK_LISTA_DESEOS" target="_blank">Lista de deseos</a>
+<a class="button" href="LINK_PAGO_CUBIERTO" target="_blank">Abonar cubierto</a>
+</div>
+
+<div class="section">
+<h2>Álbum del Gran Día</h2>
+<a class="button" href="LINK_DRIVE_FOTOS" target="_blank">Subir fotos</a>
+</div>
+
+<footer>
+Con amor, Camila & Walter
+</footer>
+
+<script>
+const countdown = document.getElementById("countdown");
+const weddingDate = new Date("October 16, 2026 22:00:00").getTime();
+
+setInterval(function() {
+const now = new Date().getTime();
+const distance = weddingDate - now;
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+countdown.innerHTML = days + " días · " + hours + " hs · " + minutes + " min · " + seconds + " seg";
+
+}, 1000);
+</script>
+
+</body>
+</html>
