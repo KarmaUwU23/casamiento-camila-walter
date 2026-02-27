@@ -16,53 +16,52 @@ box-sizing:border-box;
 
 body{
 font-family:'Montserrat', sans-serif;
-background: linear-gradient(180deg, #fff 0%, #fdf2f6 100%);
+background: linear-gradient(180deg, #ffffff 0%, #fdf2f6 100%);
 color:#5e4b4b;
 text-align:center;
 position:relative;
 overflow-x:hidden;
 }
 
-/* FLORES DECORATIVAS */
-.flower-top-left{
+/* DECORACIÓN FLORAL */
+.decor{
 position:fixed;
+opacity:0.15;
+pointer-events:none;
+z-index:0;
+}
+
+.flower-top{
 top:0;
 left:0;
-width:250px;
-opacity:0.25;
-pointer-events:none;
+width:320px;
 }
 
-.flower-bottom-right{
-position:fixed;
+.flower-bottom{
 bottom:0;
 right:0;
-width:250px;
-opacity:0.25;
-pointer-events:none;
+width:320px;
+transform:rotate(180deg);
 }
 
-/* MARIPOSAS DECORATIVAS */
 .butterfly-one{
-position:fixed;
-top:25%;
+top:30%;
 right:8%;
-width:90px;
-opacity:0.35;
-pointer-events:none;
+width:120px;
+opacity:0.2;
 }
 
 .butterfly-two{
-position:fixed;
-bottom:20%;
-left:10%;
-width:80px;
-opacity:0.35;
-pointer-events:none;
+bottom:25%;
+left:8%;
+width:100px;
+opacity:0.2;
 }
 
 header{
 padding:120px 20px 60px 20px;
+position:relative;
+z-index:1;
 }
 
 h1{
@@ -91,6 +90,8 @@ color:#c48a9a;
 padding:80px 20px;
 max-width:700px;
 margin:auto;
+position:relative;
+z-index:1;
 }
 
 .section h2{
@@ -137,23 +138,37 @@ footer{
 padding:60px 20px;
 font-size:0.9rem;
 color:#9c8a8a;
+position:relative;
+z-index:1;
 }
 </style>
 </head>
 
 <body>
 
-<!-- IMÁGENES DECORATIVAS -->
-<img src="https://i.imgur.com/Z7AzH2c.png" class="flower-top-left">
-<img src="https://i.imgur.com/Z7AzH2c.png" class="flower-bottom-right">
-<img src="https://i.imgur.com/3QKQZ8H.png" class="butterfly-one">
-<img src="https://i.imgur.com/3QKQZ8H.png" class="butterfly-two">
+<!-- FLOR SUPERIOR -->
+<svg class="decor flower-top" viewBox="0 0 500 500">
+<path fill="#d8a7b1" d="M100,400 C150,200 350,200 400,400 C300,350 200,350 100,400 Z"/>
+</svg>
+
+<!-- FLOR INFERIOR -->
+<svg class="decor flower-bottom" viewBox="0 0 500 500">
+<path fill="#d8a7b1" d="M100,400 C150,200 350,200 400,400 C300,350 200,350 100,400 Z"/>
+</svg>
+
+<!-- MARIPOSAS -->
+<svg class="decor butterfly-one" viewBox="0 0 200 200">
+<path fill="#e3b5c2" d="M100 100 C50 20, 20 150, 100 120 C180 150, 150 20, 100 100 Z"/>
+</svg>
+
+<svg class="decor butterfly-two" viewBox="0 0 200 200">
+<path fill="#e3b5c2" d="M100 100 C50 20, 20 150, 100 120 C180 150, 150 20, 100 100 Z"/>
+</svg>
 
 <header>
 <h1>Camila y Walter</h1>
 <p>Con alegría en el corazón queremos invitarlos a celebrar con nosotros este día tan especial.</p>
 <p><strong>16 de Octubre</strong></p>
-
 <div class="countdown" id="countdown"></div>
 </header>
 
